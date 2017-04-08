@@ -1,8 +1,7 @@
 #/bin/bash -e
 
-# Start TheSparkBox
-docker run \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -e TSB_DATA_DIR=$HOME/.TheSparkBox \
-  mcapuccini/thesparkbox \
-  up -d
+# Install TheSparkBox
+curl -Lo tsb https://raw.githubusercontent.com/mcapuccini/TheSparkBox/master/bin/tsb
+chmod +x tsb
+sudo mkdir -p /opt/bin
+sudo mv tsb /opt/bin
